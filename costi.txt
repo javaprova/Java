@@ -1,0 +1,29 @@
+Rilassamento di un arco (u,v) è il verificare se passando per u è possibile migliorare
+il cammino minimo per v precedentemente trovato e in caso affermativo di aggiornare v.d e v.par
+
+relax(u, v, w)
+	if (v.d < u.d + w(u,v))
+		v.d = u.d + w(u,v)
+		v.par = u
+
+bubble		O(n^2)	O(n^2)
+selection	O(n^2)	O(n^2)
+insertion	O(n)	O(n^2)
+heap		O(nlogn)O(nlogn)
+merge		O(nlogn)O(nlogn)
+quick		O(nlogn)O(n^2)
+counting	O(n+k)  O(n+k)
+radix		O(kn) 	O(kn)
+
+Dijkstra	O(V^2 + E) = O(V^2) [usando array semplice]
+		O((V+E)logV) = O(ElogV) [se grafo è sufficientemente sparso e si usa min-heap binario come coda]
+		O(VlogV + E) = O(VlogV) [heap di Fibonacci]
+
+Bellmanford	O(V^2 + VE)
+
+Prim		O(VlogV + ElogV) = O(ElogV)
+		O(E+VlogV) = O(VlogV)[heap di Fibonacci]
+
+Kruskal		O(ElogE)
+		O(ElogV)
+		
